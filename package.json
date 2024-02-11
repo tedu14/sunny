@@ -1,0 +1,63 @@
+{
+    "name": "sunny",
+    "version": "1.0.0",
+    "description": "A lib to handle uncontrolled and complex forms locally or globally",
+    "main": "dist/sunny.umd.js",
+    "module": "dist/sunny.es.js",
+    "types": "dist/sunny.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tedu14/sunny.git"
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "preinstall": "npx only-allow pnpm",
+        "prepare": "husky",
+        "lint": "eslint lib/* --ext .ts,.tsx --fix --max-warnings=0"
+    },
+    "keywords": [
+        "react",
+        "form",
+        "forms",
+        "uncontrollable",
+        "controlled",
+        "controlled-component",
+        "uncontrolled-component",
+        "controlled-form",
+        "uncontrolled-form",
+        "form-state",
+        "form-state-management",
+        "form-state-manager",
+        "form-state-management-library",
+        "form-state-manager-library",
+        "form-state"
+    ],
+    "author": "tedu14",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/dot-object": "^2.1.6",
+        "@types/node": "^20.11.17",
+        "@types/react": "^18.2.55",
+        "@typescript-eslint/eslint-plugin": "^6.21.0",
+        "@typescript-eslint/parser": "^6.21.0",
+        "@vitejs/plugin-react": "^4.2.1",
+        "eslint": "^8.56.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-prettier": "^5.1.3",
+        "eslint-plugin-react": "^7.33.2",
+        "husky": "^9.0.10",
+        "lint-staged": "^15.2.2",
+        "prettier": "^3.2.5",
+        "typescript": "^5.3.3",
+        "vite": "^5.1.1"
+    },
+    "dependencies": {
+        "dot-object": "^2.1.4",
+        "react": "^18.2.0"
+    },
+    "lint-staged": {
+        "lib/*": []
+    }
+}
