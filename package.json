@@ -15,7 +15,8 @@
     "scripts": {
         "preinstall": "npx only-allow pnpm",
         "prepare": "husky",
-        "lint": "eslint lib/* --ext .ts,.tsx --fix --max-warnings=0"
+        "lint": "eslint lib/* --ext .ts,.tsx --fix --max-warnings=0",
+        "build": "vite build"
     },
     "keywords": [
         "react",
@@ -58,6 +59,8 @@
         "react": "^18.2.0"
     },
     "lint-staged": {
-        "lib/*": []
+        "lib/*": [
+            "pnpm run lint"
+        ]
     }
 }
