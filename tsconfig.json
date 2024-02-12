@@ -18,11 +18,10 @@
         "experimentalDecorators": true,
         "baseUrl": "."
     },
-    "include": ["src", "./**/*.json"],
+    "include": ["lib"],
     "references": [
         {
             "path": "./tsconfig.node.json"
         }
-    ],
-    "exclude": ["node_modules", "coverage", ".husky", "dist", "build"]
+    ]
 }

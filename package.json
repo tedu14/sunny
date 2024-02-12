@@ -38,6 +38,8 @@
     "author": "tedu14",
     "license": "ISC",
     "devDependencies": {
+        "@testing-library/jest-dom": "^6.4.2",
+        "@testing-library/react": "^14.2.1",
         "@types/dot-object": "^2.1.6",
         "@types/node": "^20.11.17",
         "@types/react": "^18.2.55",
@@ -52,7 +54,8 @@
         "lint-staged": "^15.2.2",
         "prettier": "^3.2.5",
         "typescript": "^5.3.3",
-        "vite": "^5.1.1"
+        "vite": "^5.1.1",
+        "vitest": "^1.2.2"
     },
     "dependencies": {
         "dot-object": "^2.1.4",
