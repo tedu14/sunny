@@ -16,7 +16,10 @@
         "noEmit": true,
         "jsx": "react-jsx",
         "experimentalDecorators": true,
-        "baseUrl": "."
+        "baseUrl": ".",
+        "paths": {
+            "lib/*": ["lib/*"]
+        }
     },
     "include": ["lib"],
     "references": [

@@ -1,6 +1,7 @@
 /// <reference types="vitest" />
 import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
+import path from 'path'
 
 export default defineConfig({
     plugins: [react()],
@@ -13,6 +14,11 @@ export default defineConfig({
             include: ['lib/*.{ts,tsx}'],
             reporter: ['text', 'text-summary', 'lcov', 'html']
         },
-        include: ['lib/*.{test,spec}.{ts,tsx}']
+        include: ['lib/tests/*.{test,spec}.{ts,tsx}']
+    },
+    resolve: {
+        alias: {
+            lib: path.resolve(__dirname, 'lib')
+        }
     }
 })
