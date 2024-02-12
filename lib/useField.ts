@@ -9,7 +9,7 @@ import {
 import dot from 'dot-object'
 
 import { FieldHookProps, FieldRef } from './types'
-import { isArrayEmpty } from './utils'
+import { isArrayFulled } from './utils'
 import { useFormProvider } from './FormProvider'
 import { useScope } from './Scope'
 
@@ -35,7 +35,7 @@ export function useField<T>({
     }, [externalGetValue])
 
     const isValid: FieldRef<T>['isValid'] = useCallback(() => {
-        if (!isArrayEmpty(rules)) {
+        if (isArrayFulled(rules)) {
             return rules!.every(rule => !rule(handleValue()))
         }
         return true
@@ -64,7 +64,7 @@ export function useField<T>({
     )
 
     const validate: FieldRef<T>['validate'] = useCallback(() => {
-        if (isArrayEmpty(rules)) return
+        if (!isArrayFulled(rules)) return
         const error = rules!.find(rule => rule(handleValue()))
         setError(error ? error(handleValue()) : undefined)
     }, [rules])

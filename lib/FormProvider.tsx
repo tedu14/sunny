@@ -13,7 +13,7 @@ import {
 import dot from 'dot-object'
 
 import { FieldRef, FormContextProps, FormProps, FormRef } from './types'
-import { isArrayEmpty } from './utils'
+import { isArrayFulled } from './utils'
 import { useSunnyProvider } from './SunnyProvider'
 import { formEvents } from './FormEvent'
 
@@ -59,7 +59,7 @@ export const FormProvider = forwardRef<FormRef, PropsWithChildren<FormProps>>(
         ) {
             const fieldsRef = getFields()
 
-            if (!isArrayEmpty(fieldsNames)) {
+            if (isArrayFulled(fieldsNames)) {
                 const data = fieldsNames!.reduce(
                     (acc, fieldName) => {
                         const field = fieldsRef.find(f => f.name === fieldName)
@@ -100,7 +100,7 @@ export const FormProvider = forwardRef<FormRef, PropsWithChildren<FormProps>>(
         ) {
             const fieldsRef = getFields()
 
-            if (!isArrayEmpty(fieldsNames)) {
+            if (isArrayFulled(fieldsNames)) {
                 fieldsNames!.forEach(fieldName => {
                     const field = fieldsRef.find(f => f.name === fieldName)
                     if (field) {
@@ -118,7 +118,7 @@ export const FormProvider = forwardRef<FormRef, PropsWithChildren<FormProps>>(
         ) {
             const fieldsRef = getFields()
 
-            if (!isArrayEmpty(fieldsNames)) {
+            if (isArrayFulled(fieldsNames)) {
                 return fieldsNames!.every(fieldName => {
                     const field = fieldsRef.find(f => f.name === fieldName)
                     return field?.isValid()

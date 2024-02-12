@@ -1,4 +1,4 @@
-import { isArrayEmpty } from './utils'
+import { isArrayFulled } from './utils'
 
 type Listener<T = unknown[]> = (...args: T[] | unknown[]) => void
 type EventMap = {
@@ -30,7 +30,8 @@ class FormEvent {
     }
 
     public listen<K extends string>(event: K, ...args: unknown[]) {
-        if (!isArrayEmpty(this.events[event])) {
+        if (isArrayFulled(this.events[event])) {
+            console.log(typeof this.events[event], this.events[event])
             this.events[event].forEach(listener => listener.apply(this, args))
         }
     }
